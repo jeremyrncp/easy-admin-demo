@@ -1,6 +1,10 @@
 # Check out the 'messages_en.yml' for an explanation about the best practices
 # recommended to translate your backend efficiently.
 
+lang.fr: Frances
+lang.en: Anglices
+lang.es: La vida
+
 # main menu
 menu.category:     Categorías
 menu.product:      Productos

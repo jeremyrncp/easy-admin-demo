@@ -25,9 +25,10 @@
     "require": {
         "php": "^7.2.9",
         "ext-pdo_sqlite": "*",
+        "babdev/pagerfanta-bundle": "^2.0",
         "easycorp/easyadmin-bundle": "dev-master",
         "sensio/framework-extra-bundle": "^5.2",
-        "symfony/asset": "*",
+        "symfony/asset": "5.1.*",
         "symfony/dotenv": "*",
         "symfony/expression-language": "*",
         "symfony/flex": "^1.1",
@@ -42,19 +43,19 @@
         "symfony/translation": "*",
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
-        "babdev/pagerfanta-bundle": "^2.0"
+        "symfony/yaml": "5.1.*"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.2",
         "symfony/browser-kit": "*",
         "symfony/debug-bundle": "*",
+        "symfony/maker-bundle": "^1.29",
         "symfony/phpunit-bridge": "*",
         "symfony/profiler-pack": "^1.0",
         "symfony/var-dumper": "*"
     },
     "scripts": {
         "auto-scripts": {
-            "ckeditor:install": "symfony-cmd",
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"

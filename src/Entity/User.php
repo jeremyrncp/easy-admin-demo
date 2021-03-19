@@ -57,6 +57,11 @@ class User
      */
     private $contract;
 
+    /**
+     * @ORM\Column(type="string", length=2, nullable=true)
+     */
+    private $locale;
+
     public function __toString()
     {
         return (string) $this->username;
@@ -176,5 +181,17 @@ class User
     public function getContract()
     {
         return $this->contract;
+    }
+
+    public function getLocale(): ?string
+    {
+        return $this->locale;
+    }
+
+    public function setLocale(?string $locale): self
+    {
+        $this->locale = $locale;
+
+        return $this;
     }
 }
