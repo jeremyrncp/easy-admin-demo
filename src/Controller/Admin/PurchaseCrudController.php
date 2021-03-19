@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Purchase;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -30,12 +31,6 @@ class PurchaseCrudController extends AbstractCrudController
             ->setSearchFields(['id', 'guid', 'billingAddress']);
     }
 
-    public function configureActions(Actions $actions): Actions
-    {
-        return $actions
-            ->disable('delete');
-    }
-
     public function configureFields(string $pageName): iterable
     {
         $deliveryDate = DateField::new('deliveryDate');
@@ -58,5 +53,13 @@ class PurchaseCrudController extends AbstractCrudController
             FormField::addPanel('Purchase Details'),
             $createdAt->onlyOnDetail(), $id->onlyOnDetail(), $guid, $buyer, $purchasedItems->onlyOnDetail()
         ];
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->add(Crud::PAGE_INDEX, Action::DETAIL)
+            ->disable(Action::DELETE, Action::EDIT, Action::NEW)
+            ;
     }
 }

@@ -9,9 +9,10 @@
 # recommend to translate backends.
 #
 # Both ways are explained in https://github.com/javiereguiluz/EasyAdminBundle/blob/master/Resources/doc/tutorials/i18n.md
-lang.fr: French
-lang.en: English
-lang.es: Spanish
+
+lang.fr: Français
+lang.en: Anglais
+lang.es: Espagnol
 
 # NOTE: since the application is originally developed in English, this
 #       "translation" file looks useless because it doesn't really translate
@@ -22,13 +23,13 @@ lang.es: Spanish
 # (they are translated following the 1) method)
 # ------------------------------------------------------------------------------
 menu.category:     Categories
-menu.product:      Products
-menu.product.list: List Products
-menu.product.add:  Add Product
-menu.customer:     Customers
-menu.purchase:     Purchases
-menu.about:        About EasyAdmin
-menu.about.home:   Project Home
+menu.product:      Produits
+menu.product.list: Liste produits
+menu.product.add:  Ajouter produit
+menu.customer:     Clients
+menu.purchase:     Commandes
+menu.about:        A propos EasyAdmin
+menu.about.home:   Accueil projet
 menu.about.docs:   Documentation
 menu.about.issues: Report Issues
 
@@ -38,59 +39,59 @@ menu.about.issues: Report Issues
 
 # entity names, labels and titles
 Categories: Categories
-Category: Category
-Customers: Customers
-Product: Product
-Products: Products
-User: User
+Category: Categorie
+Customers: Clients
+Product: Produit
+Products: Produits
+User: Utilisateur
 
 # entity properties
-Attachments: Attachments
-Billing address: Billing address
-Buyer: Buyer
-Contract: Contract
-Created at: Created at
-Delivery date: Delivery date
-Delivery hour: Delivery hour
+Attachments: Pièces jointes
+Billing address: Adresse facturation
+Buyer: Acheteur
+Contract: Contrat
+Created at: Crée à
+Delivery date: Date livraison
+Delivery hour: Heure livraison
 Description: Description
 EAN-13: EAN-13
 Ean: EAN-13
 Email: Email
-Enabled: Enabled
-Features: Features
+Enabled: Activé
+Features: Fonctionnalités
 Guid: GUID
 ID: ID
-Image file: Image file
+Image file: Image
 Image: Image
-Is active: Is active
+Is active: Actif
 Label: Label
-Name: Name
-Parent category: Parent category
-Price: Price
-Published: Published
-Purchase: Purchase
-Purchased items: Purchased items
-Purchases: Purchases
-Shipping: Shipping
+Name: Nom
+Parent category: Catégorie parente
+Price: Prix
+Published: Publié
+Purchase: Commande
+Purchased items: Articles commande
+Purchases: Commandes
+Shipping: Expédition
 Tags: Tags
 Total: Total
-Username: Username
+Username: Nom utilisateur
 
 # help messages
-EAN-13 valid code. Leave empty if unknown.: EAN-13 valid code. Leave empty if unknown.
-Reserved for administrators use: Reserved for administrators use
+EAN-13 valid code. Leave empty if unknown.: Code EAN-13 valide. Laisser vide si inconnu
+Reserved for administrators use: Reserve pour administrateur
 
 # messages that contain variables
 'Product %entity_label%': 'Product %entity_label%'
 
 # misc. messages
-Account Information: Account Information
-Advanced Settings: Advanced Settings
-Basic information: Basic information
-Contact Information: Contact Information
-Contract file: Contract file
-Delivery Details: Delivery Details
-Legal Information: Legal Information
-Product Details: Product Details
-Purchase Details: Purchase Details
-Transactions History: Transactions History
+Account Information: Information de compte
+Advanced Settings: Paramètres avancés
+Basic information: Informations de base
+Contact Information: Informations de contact
+Contract file: Contrat PDF
+Delivery Details: Détails livraison
+Legal Information: Informations légales
+Product Details: Détails produit
+Purchase Details: Détails commande
+Transactions History: Historique des transactionss
