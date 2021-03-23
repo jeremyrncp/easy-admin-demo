@@ -13,6 +13,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use CodeItNow\BarcodeBundle\Utils\BarcodeGenerator;
+
 
 /**
  * Class Product.
@@ -422,5 +424,21 @@ class Product
     public function getPurchasedItems()
     {
         return $this->purchasedItems;
+    }
+
+    /**
+     * @param string $ean
+     * @return BarcodeGenerator
+     */
+    public function getBarCodeEan13(string $ean): BarcodeGenerator
+    {
+        $barcode = new BarcodeGenerator();
+        $barcode->setText($ean);
+        $barcode->setType(BarcodeGenerator::Ean13);
+        $barcode->setScale(2);
+        $barcode->setThickness(25);
+        $barcode->setFontSize(10);
+
+        return $barcode;
     }
 }

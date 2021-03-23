@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Application de démonstration{% endblock %}
+
+{% block body %}
+<div class="bg-white">
+    <header class="p-3 row text-sm-center">
+        <div class="col-sm-12 col-lg-6">
+            <a href="http://jeveuxmon.app" target="_blank">
+                <img src="{{ asset('assets/logo.png') }}" width="350" class="border-0" />
+            </a>
+        </div>
+        <div class="col-sm-12 col-lg-6 justify-content-end">
+            <h1 class="text-primary text-uppercase">SCAN PRODUCT PRICE</h1>
+        </div>
+    </header>
+</div>
+<main class="p-4">
+    <div class="alert alert-info">
+        <p>L'application de démonstration est une application de scan de code barre vous permettant, à partir du scan du dit code barre, de retrouver un produit, d'en consulter le prix actuel
+            puis d'en fixer le nouveau prix.</p>
+    </div>
+
+    <h3>Consultation de l'interface d'administration</h3>
+    <p>
+        L'<a href="{{ path('app_admin_dashboard_index') }}" target="_blank">interface d'administration</a> vous offre une interface optimisée et claire pour gérer vos informations.
+    </p>
+
+    <article class="mt-5">
+        <h4>Quelques produits à scanner...</h4>
+        <div class="card-deck">
+            {% for product in products %}
+                {% set barCode = product.getBarCodeEan13(product.ean) %}
+                {% set url = ea_url()
+                    .setController('App\\Controller\\Admin\\ProductCrudController')
+                    .setAction('detail')
+                    .setEntityId(product.id) %}
+                <div class="card">
+                    <div class="card-header">{{ product.name }}</div>
+                    <div class="card-body text-center">
+                        <p><img src="data:image/png;base64, {{ barCode.generate() }}" /></p>
+                        <p class="font-weight-bold">{{ product.price }} $</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="{{ url }}" class="btn btn-primary" target="_blank">View product detail</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </article>
+</main>
+<footer>
+
+</footer>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
