@@ -29,6 +29,7 @@
         "codeitnowin/barcode": "^3.0",
         "easycorp/easyadmin-bundle": "dev-master",
         "sensio/framework-extra-bundle": "^5.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "5.1.*",
         "symfony/css-selector": "5.1.*",
         "symfony/dotenv": "*",
@@ -58,7 +59,6 @@
     },
     "scripts": {
         "auto-scripts": {
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },

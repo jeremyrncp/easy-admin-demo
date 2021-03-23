@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
- * @ORM\Table(name="user")
+ * @ORM\Table(name="users")
  * @ORM\Entity
  */
 class User
