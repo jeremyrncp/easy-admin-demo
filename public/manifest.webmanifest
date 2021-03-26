@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "SCAN PRODUCT PRICE : demonstration application",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "assets/logo-icon.jpg",
+      "sizes": "226x226",
+      "type": "image/jpeg"
+    }
+  ],
+  "name": "Scan Product Price",
+  "short_name": "SCAN PRICE",
+  "start_url": "/scancode"
+}

@@ -3,29 +3,24 @@
 {% block title %}Application de démonstration{% endblock %}
 
 {% block body %}
-<div class="bg-white">
-    <header class="p-3 row text-sm-center">
-        <div class="col-sm-12 col-lg-6">
-            <a href="http://jeveuxmon.app" target="_blank">
-                <img src="{{ asset('assets/logo.png') }}" width="350" class="border-0" />
-            </a>
+    <div class="row">
+       <div class="col-12 col-lg-6">
+           <div class="alert alert-info">
+               <p>L'application de démonstration est une application de scan de code barre vous permettant, à partir du scan du dit code barre, de retrouver un produit, d'en consulter le prix actuel
+                   puis d'en fixer le nouveau prix.</p>
+               <p>A travers cette application vous accédez à trois types de contenu présents dans la plupart des applications : </p>
+               <ul>
+                   <li><a href="{{ path('app_admin_dashboard_index') }}" target="_blank">interface d'administration</a> </li>
+                   <li>interface de gestion optimisée pour smartphone</li>
+                   <li>business intelligence à travers un dashboard</li>
+               </ul>
+               <p>Afin de <b>tester l'application</b>, scannez le QR Code afin d'y accéder puis utilisez les codes barre produit fournis un peu plus bas.</p>
+           </div>
+       </div>
+        <div class="col-12 col-lg-6 text-center">
+            <p><img src="data:image/png;base64, {{ qrCode.generate() }}" /></p>
         </div>
-        <div class="col-sm-12 col-lg-6 justify-content-end">
-            <h1 class="text-primary text-uppercase">SCAN PRODUCT PRICE</h1>
-        </div>
-    </header>
-</div>
-<main class="p-4">
-    <div class="alert alert-info">
-        <p>L'application de démonstration est une application de scan de code barre vous permettant, à partir du scan du dit code barre, de retrouver un produit, d'en consulter le prix actuel
-            puis d'en fixer le nouveau prix.</p>
     </div>
-
-    <h3>Consultation de l'interface d'administration</h3>
-    <p>
-        L'<a href="{{ path('app_admin_dashboard_index') }}" target="_blank">interface d'administration</a> vous offre une interface optimisée et claire pour gérer vos informations.
-    </p>
-
     <article class="mt-5">
         <h4>Quelques produits à scanner...</h4>
         <div class="card-deck">
@@ -42,16 +37,12 @@
                         <p class="font-weight-bold">{{ product.price }} $</p>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="{{ url }}" class="btn btn-primary" target="_blank">View product detail</a>
+                        <a href="{{ url }}" class="btn btn-primary" target="_blank">Fiche produit</a>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </article>
-</main>
-<footer>
-
-</footer>
 {% endblock %}
 
 {% block javascripts %}

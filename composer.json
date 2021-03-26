@@ -28,7 +28,7 @@
         "babdev/pagerfanta-bundle": "^2.0",
         "codeitnowin/barcode": "^3.0",
         "easycorp/easyadmin-bundle": "dev-master",
-        "sensio/framework-extra-bundle": "^5.2",
+        "sensio/framework-extra-bundle": "^6.1",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "5.1.*",
         "symfony/css-selector": "5.1.*",
@@ -46,6 +46,7 @@
         "symfony/translation": "*",
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
+        "symfony/webpack-encore-bundle": "^1.11",
         "symfony/yaml": "5.1.*"
     },
     "require-dev": {
