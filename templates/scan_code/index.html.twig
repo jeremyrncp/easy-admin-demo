@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Scan Code Price{% endblock %}
+
+{% block body %}
+<div>
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <label for="device">Choisissez caméra : </label>
+                <select id="device" class="form-control"></select>
+            </form>
+            <video id="scancode" height="300" style="width: 100%; border: 1px solid gray" autoplay muted playsinline></video>
+        </div>
+    </div>
+    <div id="scancode-debug"></div>
+    <div id="scancode-result" class="alert alert-warning text-center d-none"></div>
+
+    <div data-controller="edit-price-product" class="text-center" id="edit-price">
+        <div data-edit-price-product-target="container">
+            <input data-action="json-data@window->edit-price-product#updateData" type="hidden" />
+            <input data-edit-price-product-value="id" type="hidden" />
+
+            <h1 class="mt-5 text-center"><span data-edit-price-product-target="name"></span></h1>
+            <div class="alert alert-info">
+                <h3><span data-edit-price-product-target="price"></span> $</h3>
+
+                <input type="number" data-edit-price-product-target="newPrice" id="newPriceProduct" placeholder="Nouveau prix" />
+
+                <button data-action="click->edit-price-product#updatePrice" class="btn btn-primary mt-3">
+                    <span data-edit-price-product-target="submitButton" class="d-none">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="sr-only">Loading...</span>
+                    </span>
+                    Mettre à jour le prix
+                </button>
+            </div>
+            <span data-edit-price-product-target="description" class="d-block text-justify"></span>
+            <div class="text-center">
+                <img src="" class="img-thumbnail" data-edit-price-product-target="image" />
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('scancode') }}
+{% endblock %}
